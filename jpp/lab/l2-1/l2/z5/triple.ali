@@ -1,0 +1,18 @@
+V "GNAT Lib v10"
+P ZX
+
+RN
+
+U triple%s		triple.ads		664f4863 NE OO PK IL
+
+D system.ads		20230707070819 4635ec04 system%s
+D triple.ads		20240318192509 664f4863 triple%s
+G a e
+G c Z s s [tripleIP triple 3 14 none]
+X 2 triple.ads
+2K9*triple 6l5 6e11
+3R14*triple 5e19
+4i17*x{integer}
+4i20*y{integer}
+4i23*d{integer}
+

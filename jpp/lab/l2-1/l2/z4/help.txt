@@ -1,0 +1,5 @@
+x86_64-linux-gnu-gnatmake-10 -gnatyl lib.adb
+x86_64-linux-gnu-gcc-10 -c main.c -o main.o
+x86_64-linux-gnu-gcc-10 main.c lib.o -lgnat
+
+

@@ -1,0 +1,13 @@
+1.	ping 198.128.0.1 (np. ttl 114)
+	ping -t 12 198.128.0.1 
+	 
+
+
+2. wpływ framgentacji danych do danych blisko, jaki największy pakiet bez fragmentacji (jest opcja w pingu)
+Bardzo blisko, blisko, średnio, daleko, bardzo daleko
+Pakiety małe, pakiety duże
+
+Ile skoków tam, ile z powrotem
+
+
+

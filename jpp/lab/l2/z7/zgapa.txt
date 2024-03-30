@@ -1,0 +1,3 @@
+go build -buildmode=c-archive -o lib.a lib.go
+gcc -o main main.c -L. -l:lib.a
+

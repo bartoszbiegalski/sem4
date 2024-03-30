@@ -1,0 +1,68 @@
+V "GNAT Lib v10"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U main%b		main.adb		ce4334b3 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W lib%s			lib.adb			lib.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+W triple%s		triple.ads		triple.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D lib.ads		20240318201213 cd71258e lib%s
+D main.adb		20240318201959 cb898c33 main%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-conca4.ads		20230707070819 7e642b20 system.concat_4%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-imgint.ads		20230707070819 02dbe0c2 system.img_int%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+D triple.ads		20240318192509 664f4863 triple%s
+G a e
+G c Z b b [main standard 5 11 none]
+G r c none [main standard 5 11 none] [gcd_ext_loop lib 8 18 none]
+X 1 ada.ads
+16K9*Ada 20e8 11|1r6 1r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 11|1w10 1r27
+508U14*Put_Line 11|18s9
+X 10 lib.ads
+3K9*lib 13e8 11|2w6 2r15
+8V18*gcd_ext_loop{27|3R14} 11|16s14
+X 11 main.adb
+5U11*Main 5b11 19l5 19t9
+6i9 n{integer}
+7i9 variable{integer}
+8r9 t{27|3R14}
+8r12 s{27|3R14} 16m9 18r34 18r62 18r84
+X 27 triple.ads
+2K9*triple 11|3w6 3r18 8r16 27|6e11
+3R14*triple 11|8r23 27|5e19
+4i17*x{integer} 11|18r36
+4i20*y{integer} 11|18r64
+4i23*d{integer} 11|18r86
+

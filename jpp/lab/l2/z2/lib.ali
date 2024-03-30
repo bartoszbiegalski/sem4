@@ -1,0 +1,70 @@
+V "GNAT Lib v10"
+P ZX
+
+RN
+RV NO_RECURSION
+RV SPARK_05
+
+U lib%b			lib.adb			a178f2ad NE OO PK IL
+
+U lib%s			lib.ads			ab3e6ded EE NE OO PK IL
+W triple%s		triple.ads		triple.ali
+
+D lib.ads		20240318201213 cd71258e lib%s
+D lib.adb		20240318201851 6c09d723 lib%b
+D system.ads		20230707070819 4635ec04 system%s
+D triple.ads		20240318192509 664f4863 triple%s
+G a e
+G c Z s b [fact_loop lib 6 18 none]
+G c Z s b [gcd_loop lib 7 18 none]
+G c Z s b [gcd_ext_loop lib 8 18 none]
+G c Z s b [fact_rec lib 10 18 none]
+G c Z s b [gcd_rec lib 11 18 none]
+G c Z s b [gcd_ext_rec lib 12 18 none]
+X 1 lib.ads
+3K9*lib 13l5 13e8 2|3b14 119l5 119t8
+6V18*fact_loop{integer} 6>29 2|5b18 16l13 16t22
+6i29 var{integer} 2|5b29 10r28
+7V18*gcd_loop{integer} 7>28 7>41 2|18b18 36l13 36t21
+7i28 a{integer} 2|18b28 20r25 24r20 26r31
+7i41 b{integer} 2|18b41 21r25 24r24 25r31
+8V18*gcd_ext_loop{4|3R14} 8>32 8>45 2|38b18 72l13 72t25
+8i32 a{integer} 2|38b32 48r18
+8i45 b{integer} 2|38b45 49r14
+10V18*fact_rec{integer} 10>28 2|75b18 83s32 85l13 85t21
+10i28 var{integer} 2|75b28 80r20 83r42 83r51
+11V18*gcd_rec{integer} 11>27 11>40 2|87b18 95s40 97s40 100l13 100t20
+11i27 a{integer} 2|87b27 92r32 94r32 95r48 95r57 97r51
+11i40 b{integer} 2|87b40 91r20 94r28 95r51 97r48 97r57
+12V18*gcd_ext_rec{4|3R14} 12>31 12>44 2|102b18 112s33 117l13 117t24
+12i31 a{integer} 2|102b31 104r25
+12i44 b{integer} 2|102b44 105r25 109r20
+X 2 lib.adb
+7i9 i{integer} 10r23 11r34 12m25 12r30
+8i9 n{integer} 11m25 11r30 15r24
+20i9 a1{integer} 25m25 31r31 32m25 35r24
+21i9 b1{integer} 26m25 29r23 30r33 31m25 31r38
+22i9 temp{integer} 30m25 32r31
+40i9 q{integer} 55m25 62r38 66r38
+41i9 r{integer} 49m9 54r15 55r38 57r33 58m25 58r40
+41i12 r_old{integer} 48m9 55r30 58r30 59m25 70r52
+42i9 s{integer} 52m9 61r33 62m25 62r42
+42i12 s_old{integer} 50m9 62r30 63m25 70r31
+43i9 t{integer} 53m9 65r33 66m25 66r42
+43i12 t_old{integer} 51m9 66r30 67m25 70r41
+44i9 temp{integer} 57m25 59r34 61m25 63r34 65m25 67r34
+45r9 output{4|3R14} 70m17 71r24
+77i9 i{integer}
+78i9 n{integer}
+89i9 temp{integer}
+104i9 a1{integer} 106r49 112r50 115r52
+105i9 b1{integer} 112r46 112r57 115r55
+106r9 temp{4|3R14} 110r32 112m25 115r31 115r42 115r61 115r73
+107r9 output{4|3R14} 115m17 116r24
+X 4 triple.ads
+2K9*triple 1|2w6 2r18 8r65 12r64 2|38r65 45r18 102r64 106r16 107r18 4|6e11
+3R14*triple 1|8r72 12r71 2|38r72 45r25 102r71 106r23 107r25 4|5e19
+4i17*x{integer} 2|70m28 106m34 115m28 115r47
+4i20*y{integer} 2|70m38 106m40 115r36 115m39 115r66
+4i23*d{integer} 2|70m48 106m46 115m69 115r78
+

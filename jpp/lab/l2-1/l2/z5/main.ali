@@ -1,0 +1,89 @@
+V "GNAT Lib v10"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U main%b		main.adb		b3622f48 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W c2adainterface%s	c2adainterface.ads	c2adainterface.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+W triple%s		triple.ads		triple.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D c2adainterface.ads	20240319212741 e53bb5f7 c2adainterface%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-c.ads		20230707070819 5421119b interfaces.c%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D main.adb		20240319213549 cac3162a main%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-conca2.ads		20230707070819 02a0d7d0 system.concat_2%s
+D s-conca4.ads		20230707070819 7e642b20 system.concat_4%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-imgint.ads		20230707070819 02dbe0c2 system.img_int%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+D triple.ads		20240318192509 664f4863 triple%s
+G a e
+G c Z b b [main standard 5 11 none]
+G r c none [main standard 5 11 none] [fact_loop c2adainterface 5 18 none]
+G r c none [main standard 5 11 none] [fact_rec c2adainterface 12 18 none]
+G r c none [main standard 5 11 none] [gcd_loop c2adainterface 6 18 none]
+G r c none [main standard 5 11 none] [gcd_rec c2adainterface 13 18 none]
+G r c none [main standard 5 11 none] [gcd_ext_loop c2adainterface 7 18 none]
+G r c none [main standard 5 11 none] [gcd_ext_rec c2adainterface 14 18 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|1r6 1r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 12|1w10 1r27
+508U14*Put_Line 12|10s17 13s9 16s17 19s9 21s9 23s9 25s9 27s9 32s9 34s9 36s9
+. 38s9 43s9 45s9 47s9
+X 8 c2adainterface.ads
+4K9*c2adainterface 19e19 12|2w6 2r26
+5V18*fact_loop{integer} 12|10s40
+6V18*gcd_loop{integer} 12|21s32 25s32
+7V18*gcd_ext_loop{29|3R14} 12|29s14 40s14
+12V18*fact_rec{integer} 12|16s40
+13V18*gcd_rec{integer} 12|21s66 25s66
+14V18*gcd_ext_rec{29|3R14} 12|30s14 41s14
+X 9 interfac.ads
+38K9*Interfaces 184e15 12|3r6 3r24
+X 10 i-c.ads
+18K20*C 230e17 12|3w17 3r35
+X 12 main.adb
+5U11*Main 5b11 50l5 50t9
+6r9 t{29|3R14} 29m9 32r34 32r62 32r84 40m9 43r34 43r62 43r84
+6r12 s{29|3R14} 30m9 36r34 36r62 36r84 41m9 47r34 47r62 47r84
+7i9 i{integer}
+9i13 i{integer} 10r50
+15i13 i{integer} 16r49
+X 29 triple.ads
+2K9*triple 12|4w6 4r18 6r16 29|6e11
+3R14*triple 12|6r23 29|5e19
+4i17*x{integer} 12|32r36 36r36 43r36 47r36
+4i20*y{integer} 12|32r64 36r64 43r64 47r64
+4i23*d{integer} 12|32r86 36r86 43r86 47r86
+
