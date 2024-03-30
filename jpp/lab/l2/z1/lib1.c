@@ -25,6 +25,52 @@ int gcd_loop(int a, int b) {
 	return a;
 }
 
+struct triple gcd_ext_loop(int a, int b, int c) {
+
+	int temp = gcd_loop(a, b);
+	struct triple output;
+	output.x = a;
+	output.y = b;
+	output.d = -1;
+	
+	if (c % temp == 0) {
+	int q;
+	int r, r_old;
+	int s, s_old;
+	int t, t_old;
+	
+	int temp;
+	
+	r_old = a;
+	r = b;
+	s_old = 1;
+	t_old = 0;
+	s = 0; 
+	t = 1;
+	while (r != 0) {
+		q = r_old / r;
+	
+		temp = r;
+		r = r_old % r;
+		r_old = temp;
+		
+		temp = s;
+		s = s_old - q * s;
+		s_old = temp;
+		
+		temp = t;
+		t = t_old - q * t;
+		t_old = temp;
+	}
+
+	output.x = s_old;
+	output.y = t_old;
+	output.d = r_old;
+
+	}
+	return output;
+	
+}
 int fact_rec(int n) {
 	if (n == 0) return 1;
 	else return n*fact_rec(n-1);
@@ -38,5 +84,27 @@ int gcd_rec(int a, int b) {
 	}
 	if(b == 0) return a;
 	else return gcd_rec(b, a % b);
+}
+
+struct triple gcd_ext_rec(int a, int b, int c) {
+	struct triple temp;
+	int nwd = gcd_rec(a, b);
+	if (c % nwd != 0) {
+		temp.x = a;
+		temp.y = b;
+		temp.d = -1;
+		return temp;
+	}
+	
+	temp.x = 1;
+	temp.y = 0;
+	temp.d = a;
+	if( b == 0 ) return temp;
+	temp = gcd_ext_rec(b, a % b, c);
+	struct triple output;
+	output.x = temp.y;
+	output.y = temp.x - (a/b) * temp.y;
+	output.d = temp.d;
+	return output;
 }
 
