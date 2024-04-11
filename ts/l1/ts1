@@ -1,0 +1,4 @@
+ping -s 5 -p 7369656d61 wp.pl
+ping -s 1000 198.168.0.1
+ping hfm-berlin.de
+ping hfm-berlin.de
