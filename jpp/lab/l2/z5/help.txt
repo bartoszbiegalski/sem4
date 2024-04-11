@@ -1,0 +1,4 @@
+gnatmake main.adb
+x86_64-linux-gnu-gnatlink-10 main.ali lib1.o
+./main
+
