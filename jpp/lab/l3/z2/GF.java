@@ -26,6 +26,17 @@ class GF {
     int getCharacteristic() {
         return characteristic;
     }
+
+    @Override
+    public String toString() {
+        return "(" + characteristic + ", " + value + ")";
+    }
+
+    @Override
+    public boolean compare() {
+        
+    }
+
     private Triple gcd_ext(int a, int b, int c) {
         Triple temp = new Triple(1, 0, a);
         if( b == 0 ) return temp;
