@@ -106,7 +106,7 @@ public:
     }
     ////Algebraic
 
-    GF& operator=(const GF& b) {
+    GF& operator=(const GF& b) const {
         if (characteristic != b.characteristic) {
             throw GFCharacteristicException();
         }
@@ -114,11 +114,11 @@ public:
         return *this;
     }
 
-    GF operator-() {
+    GF operator-() const{
         return GF(characteristic,characteristic-value % characteristic);
     }
 
-    GF operator+(const GF& b) {
+    GF operator+(const GF& b) const{
         if (characteristic != b.characteristic) {
             throw GFCharacteristicException();
         }
@@ -136,13 +136,13 @@ public:
         return GF(characteristic, result);
     }
 
-    GF operator*(const GF& b) {
+    GF operator*(const GF& b) const{
         if (characteristic != b.characteristic) {
             throw GFCharacteristicException();
         } else return GF(characteristic, (value * b.value) % characteristic);
     }
 
-    GF operator/(const GF& b) {
+    GF operator/(const GF& b) const{
         if (characteristic != b.characteristic) {
             throw GFCharacteristicException();
         } else {

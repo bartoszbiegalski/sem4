@@ -1,6 +1,7 @@
 using System;
 
 
+
 namespace GFNamespace {
   public class GFInvalidValueException : Exception {
     public GFInvalidValueException() {
@@ -13,6 +14,18 @@ namespace GFNamespace {
       Console.WriteLine("Wrong characteristic!");
     }
   }
+
+  public class Triple {
+      public int x;
+      public int y;
+      public int d;
+      public Triple(int x, int y, int d) {
+          this.x = x;
+          this.y = y;
+          this.d = d;
+      }
+  };
+
 
   public class GF {
     private int characteristic {get;}
@@ -27,6 +40,15 @@ namespace GFNamespace {
     public override string ToString() {
        return $"({characteristic},{value})";
    }
+
+   private static Triple gcd_ext(int a, int b, int c) {
+       Triple temp = new Triple(1, 0, a);
+       if( b == 0 ) return temp;
+       temp = gcd_ext(b, a % b, c);
+       Triple output = new Triple(temp.y, temp.x - (a/b) * temp.y, temp.d);
+       return output;
+   }
+
 
     public static bool operator ==(GF a, GF b) {
         if (a.characteristic != b.characteristic) {
@@ -82,101 +104,41 @@ namespace GFNamespace {
         }
     }
     ////Algebraic
-    /*
-    public static GF& operator =(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
+
+    public GF negate() {
+        return new GF(characteristic,characteristic-value % characteristic);
+    }
+
+    public static GF operator +(GF a, GF b) {
+        if (a.characteristic != b.characteristic) {
+            throw new GFCharacteristicException();
         }
-        value = b.value;
-        return *this;
+        else return new GF(a.characteristic, (a.value + b.value)%a.characteristic);
     }
 
-    public static GF& operator-() {
-        return GF(characteristic,characteristic-value % characteristic);
-    }
-
-    GF operator+(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
+    public static GF operator -(GF a, GF b) {
+        if (a.characteristic != b.characteristic) {
+            throw new GFCharacteristicException();
         }
-        else return GF(characteristic, (value + b.value)%characteristic);
+        else return new GF(a.characteristic, (a.value - b.value)%a.characteristic);
     }
 
-    GF operator-(const GF& b) const {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
+
+    public static GF operator *(GF a, GF b) {
+        if (a.characteristic != b.characteristic) {
+            throw new GFCharacteristicException();
         }
-        int result = (value - b.value) % characteristic;
-        if (result < 0) {
-            result += characteristic;
-        }
-        return GF(characteristic, result);
+        else return new GF(a.characteristic, (a.value * b.value)%a.characteristic);
     }
 
-    GF operator*(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
-        } else return GF(characteristic, (value * b.value) % characteristic);
-    }
-
-    GF operator/(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
+    public static GF operator /(GF a, GF b) {
+        if (a.characteristic != b.characteristic) {
+            throw new GFCharacteristicException();
         } else {
-            Triple triple = gcd_ext(b.value, characteristic, 1);
+            Triple triple = gcd_ext(b.value, a.characteristic, 1);
 
-            return GF(characteristic, ((value * (triple.x+characteristic)) + characteristic));
+            return new GF(a.characteristic, ((a.value * (triple.x+a.characteristic)) + a.characteristic));
         }
     }
-
-    //// Assign
-
-    GF& operator+=(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
-        }
-        *this = *this + b;
-        return *this;
-    }
-
-    GF& operator-=(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
-        }
-        *this = *this - b;
-        return *this;
-    }
-
-    GF& operator*=(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
-        }
-        *this = *this * b;
-        return *this;
-    }
-
-    GF& operator/=(const GF& b) {
-        if (characteristic != b.characteristic) {
-            throw GFCharacteristicException();
-        }
-        *this = *this / b;
-        return *this;
-    }
-
-    //// streams
-
-    friend std::ostream& operator<<(std::ostream& os, const GF& b) {
-        os << "(" << b.characteristic << ", " << b.value << ")";
-        return os;
-    }
-
-    friend GF& operator<<(GF& b, int val) {
-
-        b = GF(b.characteristic, val);
-        return b;
-    }
-
-
-  */
   }
 }
