@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 class Triple {
     public int x;
     public int y;
@@ -14,7 +12,6 @@ class Triple {
 class GF {
     private int characteristic;
     private int value;
-    private ArrayList<Integer> primes;
 
     public GF(int characteristic, int value) {
         this.characteristic = characteristic;
@@ -87,26 +84,6 @@ class GF {
         }
     }
 
-    private void setPrimes() {
-        for (int i = 2; i < (characteristic - 1)/2 + 1; i++) {
-            if (Primes.isPrime(i)) {
-                primes.add(i);
-            }
-        }
-    }
-
-    private boolean isGenerator(GF a) {
-        GF one = new GF(characteristic, 1);
-        for(int i = 0; i < primes.size(); i++) {
-            int pow = (characteristic - 1) / primes[i];
-            if ((element^pow) == one) return false;
-        }
-        return true;
-    }
-
-    private GF getRandomGenerator() {
-
-    }
 
 };
 
