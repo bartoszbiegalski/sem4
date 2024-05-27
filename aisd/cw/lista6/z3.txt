@@ -1,0 +1,28 @@
+MaxSum(array, p, q) {
+	sum = 0;
+  start = p; end = p;
+  max_sum = 0;
+  max_start = p; max_end = 0;
+
+  p_loop = p;
+  q_loop = q;
+
+  while (array[p_loop] < 0 ) p_loop++;
+  while (array[q_loop] < 0) q_loop--;
+
+  for(i in p_loop .. q_loop) {
+    if (sum + array[i] >= 0) {
+        sum += array[i];
+    }
+    else {
+        if (max_sum < sum) {
+          max_sum = sum;
+          max_start = start;
+          max_end = i - 1;
+        }
+        sum = 0;
+        start = i + 1;
+    }
+  }
+
+}
