@@ -1,0 +1,15 @@
+LISP - 
+> sbcl
+> * (load "z1.lisp")
+ML -
+> 
+> (use z1.sml)
+
+HASKELL -
+> ghci 
+> :load z1.hs
+
+PROLOG - 
+> swipl
+> consult('z2.pl').
+consult('nazwa_pliku.pl').
